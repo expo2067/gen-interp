@@ -1,0 +1,51 @@
+dev.yellow10.es8: gip
+Name "main::PR_sel_delim" used only once: possible typo at gip line 1801.
+gen: ----------- iteration: 1
+gen: -----------  ss      : <%%S%%> 
+gen: -----------  ss_items: < S> 
+        gen: got 1 ss_item: <> 
+        gen: got 1 ss_item: <S> 
+        gen: ss_item has lhs...
+epr: using PR: <S::= C B >
+        gen: ...rewrite as: 
+        gen: ...push rewrite_items: <C B>
+gen: got next_ss: <C B>
+gen:  --- rewrite_count: 1
+gen:  (1) update ss to: <C%%B>
+gen: ----------- iteration: 2
+gen: -----------  ss      : <C%%B> 
+gen: -----------  ss_items: <C B> 
+        gen: got 1 ss_item: <C> 
+        gen: ss_item has lhs...
+epr: using PR: <C::= _A>
+        gen: ...rewrite as: 
+        gen: ...push rewrite_items: <.A.>
+        gen: got 1 ss_item: <B> 
+        gen: ss_item has lhs...
+epr: using PR: <B::= _B >
+        gen: ...rewrite as: 
+        gen: ...push rewrite_items: <.B.>
+gen: got next_ss: <.A. .B.>
+gen:  --- rewrite_count: 2
+gen:  (2) update ss to: <.A.%%.B.>
+gen: ----------- iteration: 3
+gen: -----------  ss      : <.A.%%.B.> 
+gen: -----------  ss_items: <.A. .B.> 
+        gen: got 1 ss_item: <.A.> 
+        gen: ss_item has no lhs...
+        gen: ...rewrite as itself: <.A.>
+        gen: ...push rewrite_items: <.A.>
+        gen: got 1 ss_item: <.B.> 
+        gen: ss_item has no lhs...
+        gen: ...rewrite as itself: <.B.>
+        gen: ...push rewrite_items: <.A. .B.>
+gen: got next_ss: <.A. .A. .B.>
+gen:  --- rewrite_count: 0
+gen:  (3) update ss to: <.A.%%.A.%%.B.>
+gen:  output: <.A. .A. .B.>
+gen:  rules used: 
+S::= C B 
+C::= _A
+B::= _B 
+gen:  finaloutput: <.A. .A. .B.>
+
